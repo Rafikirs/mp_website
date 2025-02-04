@@ -44,18 +44,18 @@ elif option == "by Filters":
 
 
 # API Endpoints
-# url = 'https://moviepicker-503519505843.europe-west1.run.app/find'
-# url2 = 'https://moviepicker-503519505843.europe-west1.run.app/predict'
-# url3 = 'https://moviepicker-503519505843.europe-west1.run.app/get_image'
-# url4 = 'https://moviepicker-503519505843.europe-west1.run.app/get_url'
-# url5 = 'https://moviepicker-503519505843.europe-west1.run.app/get_description'
+url1 = 'https://moviepicker-503519505843.europe-west1.run.app/find'
+url2 = 'https://moviepicker-503519505843.europe-west1.run.app/predict'
+url3 = 'https://moviepicker-503519505843.europe-west1.run.app/get_image'
+url4 = 'https://moviepicker-503519505843.europe-west1.run.app/get_url'
+url5 = 'https://moviepicker-503519505843.europe-west1.run.app/get_description'
 
 # API Endpoints
-url1 = 'http://localhost:8000/find'
-url2 = 'http://localhost:8000/predict'
-url3 = 'http://localhost:8000/get_image'
-url4 = 'http://localhost:8000/get_url'
-url5 = 'http://localhost:8000/get_description'
+# url1 = 'http://localhost:8000/find'
+# url2 = 'http://localhost:8000/predict'
+# url3 = 'http://localhost:8000/get_image'
+# url4 = 'http://localhost:8000/get_url'
+# url5 = 'http://localhost:8000/get_description'
 
 
 if option == "by Movie Name":
