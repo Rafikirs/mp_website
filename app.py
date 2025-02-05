@@ -38,7 +38,7 @@ if option == "by Movie Name":
 
 elif option == "by Filters":
     st.sidebar.markdown("Find movie recommendations based on genre, language and/or description")
-    input_genre = st.sidebar.checkbox('Movie Genre', ['comedy', 'action', 'horror', 'thriller', 'romantic', 'drama'])
+    input_genre = st.sidebar.multiselect('Movie Genre', ['comedy', 'action', 'horror', 'thriller', 'romantic', 'drama'], default=['comedy', 'action'])
     input_language = st.sidebar.selectbox('Movie Language', ['English', 'Korean', 'Japanese', 'French', 'German', 'Spanish',
        'Norwegian', 'Cantonese', 'Portuguese', 'Russian', 'Danish',
        'Italian', 'Swedish', 'Greek (modern)', 'Telugu', 'Chinese', 'Icelandic', 'Finnish', 'Indonesian', 'Czech',
@@ -74,7 +74,7 @@ elif option == "by Filters":
        'Western Frisian', 'Interlingue', 'Chichewa, Chewa, Nyanja',
        'Tonga (Tonga Islands)', 'Kongo', 'Venda', 'Occitan',
        'Divehi, Dhivehi, Maldivian', 'Marshallese', 'Tigrinya', 'Romansh',
-       'Tahitian', 'Northern Ndebele', 'Corsican', 'Tatar', 'Cornish'])
+       'Tahitian', 'Northern Ndebele', 'Corsican', 'Tatar', 'Cornish'], index=0)
     input_description = st.sidebar.text_input('Movie description')
 
 
