@@ -38,14 +38,15 @@ if option == "by Movie Name":
 
 elif option == "by Filters":
     st.sidebar.markdown("Find movie recommendations based on genre, language and/or description")
-    st.sidebar.selectbox('Movie Genre', [])
-    st.sidebar.selectbox('Movie Language', [])
-    st.sidebar.text_input('Movie description')
+    input_genre = st.sidebar.selectbox('Movie Genre', [])
+    input_language = st.sidebar.selectbox('Movie Language', [])
+    input_description = st.sidebar.text_input('Movie description')
 
 
 # API Endpoints
 url1 = 'https://moviepicker-503519505843.europe-west1.run.app/find'
-url2 = 'https://moviepicker-503519505843.europe-west1.run.app/predict'
+url2 = 'https://moviepicker-503519505843.europe-west1.run.app/predict_name'
+url6 = 'https://moviepicker-503519505843.europe-west1.run.app/predict_filter'
 url3 = 'https://moviepicker-503519505843.europe-west1.run.app/get_image'
 url4 = 'https://moviepicker-503519505843.europe-west1.run.app/get_url'
 url5 = 'https://moviepicker-503519505843.europe-west1.run.app/get_description'
@@ -84,13 +85,25 @@ if st.button("Get Movie Suggestions"):
     # Create a space
     st.write("")
 
-    # Get the prediction as a list of movies
-    suggestion_params = {
-    "input_name" : right_movie,
-    "n_recommendations" : n_recommendations
-    }
+    if option == "by Movie Name":
+        # Get the prediction as a list of movies
+        suggestion_params = {
+        "input_name" : right_movie,
+        "n_recommendations" : n_recommendations
+        }
 
-    predict_response = requests.get(url2, params=suggestion_params)
+        predict_response = requests.get(url2, params=suggestion_params)
+
+    elif option == "by Filters":
+        suggestion_params = {
+        "user_description" : input_description,
+        "user_language" : input_language,
+        "user_genres": input_genre,
+        "n_recommendations" : n_recommendations
+        }
+
+        predict_response = requests.get(url6, params=suggestion_params)
+
     if predict_response.status_code == 200:
         prediction = predict_response.json()
 
