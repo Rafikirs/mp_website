@@ -38,8 +38,43 @@ if option == "by Movie Name":
 
 elif option == "by Filters":
     st.sidebar.markdown("Find movie recommendations based on genre, language and/or description")
-    input_genre = st.sidebar.selectbox('Movie Genre', [])
-    input_language = st.sidebar.selectbox('Movie Language', [])
+    input_genre = st.sidebar.checkbox('Movie Genre', ['comedy', 'action', 'horror', 'thriller', 'romantic', 'drama'])
+    input_language = st.sidebar.selectbox('Movie Language', ['English', 'Korean', 'Japanese', 'French', 'German', 'Spanish',
+       'Norwegian', 'Cantonese', 'Portuguese', 'Russian', 'Danish',
+       'Italian', 'Swedish', 'Greek (modern)', 'Telugu', 'Chinese', 'Icelandic', 'Finnish', 'Indonesian', 'Czech',
+       'Persian (Farsi)', 'Polish', 'Dutch', 'Mayan', 'Turkish',
+       'Armenian', 'Arabic', 'Thai', 'Irish', 'Hindi',
+       'Hebrew (modern)', 'Bengali, Bangla', 'Hungarian', 'Romanian',
+       'Serbian', 'Georgian', 'Galician', 'Urdu', 'Macedonian',
+       'Estonian', 'Wolof', 'Catalan', 'Swahili', 'Serbo-Croatian',
+       'Tagalog', 'Vietnamese', 'Malayalam', 'Ukrainian', 'Kinyarwanda',
+       'Tamil', 'Slovak', 'Kurdish', 'Southern Sotho', 'Dzongkha',
+       'Welsh', 'Tola', 'Bosnian', 'Croatian', 'Basque', 'Lithuanian',
+       'Bambara', 'Kannada', 'Lingala', 'Latin', 'Tswana', 'Malay',
+       'Marathi', 'Albanian', 'Sundanese', 'Afrikaans', 'Gujarati', 'Lao',
+       'Oromo', 'Pashto, Pushto', 'Yiddish', 'Inuktitut', 'Aymara',
+       'No spoken language', 'Assamese', 'Ossetian, Ossetic', 'Akan',
+       'Quechua', 'Latvian', 'Bislama', 'Xhosa', 'Mongolian', 'Moldavian',
+       'Fula, Fulah, Pulaar, Pular', 'Maltese', 'Yolngu matha', 'Nepali',
+       'Esperanto', 'Gibberish', 'Kashmiri', 'Northern Sami', 'Slovene',
+       'Amharic', 'Maithili', 'Guaraní',
+       'Tibetan Standard, Tibetan, Central', 'Māori', 'Kazakh',
+       'Bulgarian', 'Khmer', 'Somali', 'Kyrgyz',
+       'Eastern Punjabi, Eastern Panjabi', 'Azerbaijani', 'Burmese',
+       'Samoan', 'Javanese', 'Zulu', 'Mari', 'Scottish Gaelic, Gaelic',
+       'Sinhalese, Sinhala', 'Hausa', 'Breton', 'Faroese', 'Uzbek',
+       'Haitian, Haitian Creole', 'Shona', 'Luxembourgish, Letzeburgesch',
+       'Uyghur', 'Chechen', 'Twi', 'Igbo', 'Malagasy', 'Norwegian Bokmål',
+       'Belarusian',
+       'Old Church Slavonic, Church Slavonic, Old Bulgarian',
+       'Sardinian', 'Tajik', 'Turkmen', 'Oriya', 'Southern Ndebele',
+       'Cree', 'Abkhaz', 'Kalaallisut, Greenlandic',
+       'Limburgish, Limburgan, Limburger', 'Sanskrit (Saṁskṛta)',
+       'Chuvash', 'Yoruba', 'Norwegian Nynorsk', 'Afar', 'Sango', 'Ganda',
+       'Western Frisian', 'Interlingue', 'Chichewa, Chewa, Nyanja',
+       'Tonga (Tonga Islands)', 'Kongo', 'Venda', 'Occitan',
+       'Divehi, Dhivehi, Maldivian', 'Marshallese', 'Tigrinya', 'Romansh',
+       'Tahitian', 'Northern Ndebele', 'Corsican', 'Tatar', 'Cornish'])
     input_description = st.sidebar.text_input('Movie description')
 
 
@@ -74,7 +109,6 @@ if option == "by Movie Name":
             st.error(f"This movie can't be found!")
         else:
             right_movie = st.selectbox('Which movie did you mean ?', found_movies) # Ask user to choose the right movie
-
 
 # Ask user how many reco he wants
 n_recommendations = st.slider('How many recommendations do you want ?', 1, 10, 5)
