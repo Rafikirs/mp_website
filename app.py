@@ -1,7 +1,25 @@
 import streamlit as st
 import requests
 
-col1, col2, col3 = st.columns([0.5, 2, 0.5])
+def set_bg_image(image_url):
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("{image_url}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# Set the background image (Replace with your image URL)
+set_bg_image("https://github.com/aybik/mp_website/blob/master/logo_panda.png?raw=true")
+
+col1, col2, col3 = st.columns([0.5, 3, 0.5])
 with col2:
     st.title("Movie Picker")
 
