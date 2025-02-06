@@ -19,7 +19,7 @@ def set_bg_image(image_url):
 # Set the background image (Replace with your image URL)
 set_bg_image("https://raw.githubusercontent.com/aybik/mp_website/refs/heads/master/wp3286092.webp")
 
-col1, col2, col3 = st.columns([0.5, 2.2, 0.5])
+col1, col2, col3 = st.columns([0.5, 2.7, 0.5])
 with col2:
     st.text("")
     st.text("")
@@ -184,10 +184,10 @@ if st.button("Get Movie Suggestions"):
                     st.markdown(
                         f"""
                         <div style="
-                            border: 2px solid #4A90E2;
+                            border: 2px solid #242323;
                             padding: 10px;
                             border-radius: 10px;
-                            background-color: #F0F8FF;
+                            background-color: #c0c3c4;
                             text-align: left;
                             font-size: 15px;
                             font-weight: normal;
