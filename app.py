@@ -1,12 +1,11 @@
 import streamlit as st
 import requests
 
-col1, col2, col3 = st.columns([1, 1.8, 0.5])
+col1, col2, col3 = st.columns([0.5, 2, 0.5])
 with col2:
     st.title("Movie Picker")
 
 st.markdown("<h1 style='font-size: 26px;'>Tired of scrolling to find your next watch?</h1>", unsafe_allow_html=True)
-# st.markdown("<h1 style='font-size: 20px;'>We've got the solution !</h1>", unsafe_allow_html=True)
 st.markdown(
     """
     <style>
@@ -33,9 +32,9 @@ if option == "by Movie Name":
 
 elif option == "by Filters":
     st.sidebar.markdown("Find movie recommendations based on genre, language and/or description")
-    input_genre = st.sidebar.multiselect('Movie Genre', ['action', 'adventure', 'animation', 'comedy', 'crime', 'documentary',
+    input_genre = st.sidebar.selectbox('Movie Genre', ['action', 'adventure', 'animation', 'comedy', 'crime', 'documentary',
         'drama', 'family', 'fantasy', 'history', 'horror', 'music', 'mystery',
-        'romance', 'science_fiction', 'thriller', 'tv_movie', 'war', 'western'], default=['comedy', 'action'])
+        'romance', 'science_fiction', 'thriller', 'tv_movie', 'war', 'western'], index=0)#, default=['comedy', 'action'])
     input_language = st.sidebar.selectbox('Movie Language', ['English', 'Korean', 'Japanese', 'French', 'German', 'Spanish',
        'Norwegian', 'Cantonese', 'Portuguese', 'Russian', 'Danish',
        'Italian', 'Swedish', 'Greek (modern)', 'Telugu', 'Chinese', 'Icelandic', 'Finnish', 'Indonesian', 'Czech',
@@ -155,8 +154,7 @@ if st.button("Get Movie Suggestions"):
                     }
 
                     description_response = requests.get(url5, params=description_params)
-                    if description_response.status_code == 200:
-                        description = description_response.json()
+                    description = description_response.json()
 
                     st.text("")
 
