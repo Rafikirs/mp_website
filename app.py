@@ -7,7 +7,7 @@ def set_bg_image(image_url):
         <style>
         .stApp {{
             background-image: url("{image_url}");
-            background-size: 68%;
+            background-size: cover;
             background-position: top;
             background-attachment: fixed;
         }}
@@ -17,10 +17,15 @@ def set_bg_image(image_url):
     )
 
 # Set the background image (Replace with your image URL)
-set_bg_image("https://github.com/aybik/mp_website/blob/master/no_red-cropped.png?raw=true")
+set_bg_image("https://raw.githubusercontent.com/aybik/mp_website/refs/heads/master/wp3286092.webp")
 
-col1, col2, col3 = st.columns([0.5, 3, 0.5])
+col1, col2, col3 = st.columns([0.5, 2.2, 0.5])
 with col2:
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
     st.title("Movie Picker")
 
 st.markdown("<h1 style='font-size: 26px;'>Tired of scrolling to find your next watch?</h1>", unsafe_allow_html=True)
@@ -40,7 +45,7 @@ st.markdown(
 st.text("")
 
 # Input Parameters
-# st.sidebar.image("logo_panda.png", use_container_width=True)
+st.sidebar.image("logo_panda_2.png", use_container_width=True)
 st.sidebar.markdown("<h2 style='text-align: center;'>Input Parameters</h2>", unsafe_allow_html=True)
 option = st.sidebar.radio("Choose a recommendation method :", ["by Movie Name", "by Filters"])
 
