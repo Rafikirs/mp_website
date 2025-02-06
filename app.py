@@ -7,8 +7,8 @@ def set_bg_image(image_url):
         <style>
         .stApp {{
             background-image: url("{image_url}");
-            background-size: cover;
-            background-position: center;
+            background-size: 70%;
+            background-position: top;
             background-attachment: fixed;
         }}
         </style>
@@ -17,7 +17,7 @@ def set_bg_image(image_url):
     )
 
 # Set the background image (Replace with your image URL)
-set_bg_image("https://github.com/aybik/mp_website/blob/master/logo_panda.png?raw=true")
+set_bg_image("https://raw.githubusercontent.com/aybik/mp_website/refs/heads/master/theme-ha-1.webp")
 
 col1, col2, col3 = st.columns([0.5, 3, 0.5])
 with col2:
@@ -40,7 +40,7 @@ st.markdown(
 st.text("")
 
 # Input Parameters
-st.sidebar.image("logo_panda.png", use_container_width=True)
+# st.sidebar.image("logo_panda.png", use_container_width=True)
 st.sidebar.markdown("<h2 style='text-align: center;'>Input Parameters</h2>", unsafe_allow_html=True)
 option = st.sidebar.radio("Choose a recommendation method :", ["by Movie Name", "by Filters"])
 
