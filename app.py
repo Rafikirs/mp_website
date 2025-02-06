@@ -7,7 +7,7 @@ def set_bg_image(image_url):
         <style>
         .stApp {{
             background-image: url("{image_url}");
-            background-size: 70%;
+            background-size: 80%;
             background-position: top;
             background-attachment: fixed;
         }}
@@ -17,7 +17,7 @@ def set_bg_image(image_url):
     )
 
 # Set the background image (Replace with your image URL)
-set_bg_image("https://raw.githubusercontent.com/aybik/mp_website/refs/heads/master/theme-ha-1.webp")
+set_bg_image("https://github.com/aybik/mp_website/blob/master/no_red.png?raw=true")
 
 col1, col2, col3 = st.columns([0.5, 3, 0.5])
 with col2:
