@@ -9,8 +9,14 @@ import requests
 # This app allows you to input movie name and retrieve movie suggestions using an API.
 # ''')
 
+col1, col2, col3 = st.columns([1, 1.47, 0.5])
+with col2:
+    st.image("Image8.png", width=200)
 
-st.title("Movie Picker")
+col1, col2, col3 = st.columns([1, 1.8, 0.5])
+with col2:
+    st.title("Movie Picker")
+
 st.markdown("<h1 style='font-size: 26px;'>Tired of scrolling on streaming platforms to find a movie you don't even like ?</h1>", unsafe_allow_html=True)
 # st.markdown("<h1 style='font-size: 20px;'>We've got the solution !</h1>", unsafe_allow_html=True)
 st.markdown(
@@ -38,7 +44,9 @@ if option == "by Movie Name":
 
 elif option == "by Filters":
     st.sidebar.markdown("Find movie recommendations based on genre, language and/or description")
-    input_genre = st.sidebar.multiselect('Movie Genre', ['comedy', 'action', 'horror', 'thriller', 'romantic', 'drama'], default=['comedy', 'action'])
+    input_genre = st.sidebar.multiselect('Movie Genre', ['action', 'adventure', 'animation', 'comedy', 'crime', 'documentary',
+        'drama', 'family', 'fantasy', 'history', 'horror', 'music', 'mystery',
+        'romance', 'science_fiction', 'thriller', 'tv_movie', 'war', 'western'], default=['comedy', 'action'])
     input_language = st.sidebar.selectbox('Movie Language', ['English', 'Korean', 'Japanese', 'French', 'German', 'Spanish',
        'Norwegian', 'Cantonese', 'Portuguese', 'Russian', 'Danish',
        'Italian', 'Swedish', 'Greek (modern)', 'Telugu', 'Chinese', 'Icelandic', 'Finnish', 'Indonesian', 'Czech',
