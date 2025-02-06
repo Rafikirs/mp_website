@@ -11,7 +11,7 @@ st.markdown(
     <style>
     .big-text {
         font-size: 20px !important;
-        color: black;
+        color: white;
     }
     </style>
     <p class="big-text">We've got the solution !</p>
@@ -22,7 +22,7 @@ st.markdown(
 st.text("")
 
 # Input Parameters
-st.sidebar.image("Image8.png", use_container_width=True)
+st.sidebar.image("logo_panda.png", use_container_width=True)
 st.sidebar.markdown("<h2 style='text-align: center;'>Input Parameters</h2>", unsafe_allow_html=True)
 option = st.sidebar.radio("Choose a recommendation method :", ["by Movie Name", "by Filters"])
 
